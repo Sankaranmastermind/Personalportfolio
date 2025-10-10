@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    
     <!--Title and Icon-->
     <title>Sankaranarayanan</title>
     <link rel="shortcut icon" href="Images/pic.studio.png" type="image/x-icon">
@@ -12,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Exo+2:wght@300;400;500;600;700&family=Audiowide&display=swap" rel="stylesheet">
     <link href="tooplate-neural-style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 </head>
 <body>
     <canvas id="neural-bg"></canvas>
@@ -171,19 +174,33 @@
 
     <section id="contact" class="fade-in">
 
-        <h2 class="section-title">CONTACT</h2>
+        <form  class="contact-form glass-card" id="contactForm" action="https://formsubmit.co/535ca4a07549f38acbe5d93516caed72" method="POST">
 
-        <form  class="contact-form glass-card" id="submit-form" action="">
-            <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
+            <!--Honeypot-->
+            <input type="text" name="_honey" style="display: none;">
+
+            <!--Disable Captcha-->
+            <input type="hidden" name="_captcha" value="false">
+
+            <input type="hidden" name="_next" value="https://sankaranarayanan.vercel.app/">
+
+            <div>
+                <h2 class="section-title">CONTACT</h2>
             </div>
-            <div class="form-group">
-                <input type="email" placeholder="Your Email" required>
+
+            <div>
+
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                 </div>
+                 <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                     <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                    <button type="submit" class="neural-btn">SEND MESSAGE</button>
             </div>
-            <div class="form-group">
-                <textarea rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="neural-btn">SEND MESSAGE</button>
         </form>
 
     </section>
@@ -250,24 +267,7 @@
 
     <script src="tooplate-neural-scripts.js"></script>
 
-    <script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbz7d-jZXsdSlC9oZ-15SlAkURa11w41DPphFt3XH4oyXmUpwJjt5mjHsqFONszGPVuLyQ/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
+
     
-                }
-            })
-        })
-    </script>
 </body>
 </html>
